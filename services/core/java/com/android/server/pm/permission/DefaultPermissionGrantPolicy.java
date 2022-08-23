@@ -975,6 +975,18 @@ final class DefaultPermissionGrantPolicy {
         // OnePlus Gallery
         grantSystemFixedPermissionsToSystemPackage(pm, "com.oneplus.gallery", userId,
                 STORAGE_PERMISSIONS);
+
+        String[] notifPackages = {
+            "com.android.camera2",
+            "com.google.android.apps.safetyhub",
+            "com.google.android.calendar",
+            "com.google.android.contacts",
+            "com.google.android.dialer",
+            "com.google.android.markup",
+        };
+        for (String pkg : notifPackages) {
+            grantPermissionsToSystemPackage(pm, pkg, userId, NOTIFICATION_PERMISSIONS);
+        }
     }
 
     private String getDefaultSystemHandlerActivityPackageForCategory(PackageManagerWrapper pm,
