@@ -107,6 +107,32 @@ public class BrightnessSliderController extends ViewController<BrightnessSliderV
         return mIcon;
     }
 
+    private void triggerVibration(Context context, boolean tracking) {
+        int vibrateIntensity = Settings.System.getInt(context.getContentResolver(),
+                    Settings.System.BRIGHTNESS_SLIDER_HAPTICS_INTENSITY, 1);
+        if (vibrator == null || !tracking || vibrateIntensity == 0) {
+            return;
+        }
+
+            VibrationEffect effect;
+            switch (vibrateIntensity) {
+                case 1:
+                    effect = VibrationEffect.createPredefined(VibrationEffect.EFFECT_TEXTURE_TICK);
+                    break;
+                case 2:
+                    effect = VibrationEffect.createPredefined(VibrationEffect.EFFECT_TICK);
+                    break;
+                case 3:
+                    effect = VibrationEffect.createPredefined(VibrationEffect.EFFECT_CLICK);
+                    break;
+                default:
+                    effect = VibrationEffect.createPredefined(VibrationEffect.EFFECT_TEXTURE_TICK);
+                    break;
+            }
+
+        AsyncTask.execute(() -> vibrator.vibrate(effect));
+    }
+
     @Override
     protected void onViewAttached() {
         mView.setOnSeekBarChangeListener(mSeekListener);
