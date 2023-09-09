@@ -818,6 +818,8 @@ public class ApplicationPackageManager extends PackageManager {
                 }
             };
 
+    @Override
+    public boolean hasSystemFeature(String name, int version) {
         return mHasSystemFeatureCache.query(new HasSystemFeatureQuery(name, version));
     }
 
