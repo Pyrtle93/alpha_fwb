@@ -59,7 +59,7 @@ public class PropImitationHooks {
         sP7Props.put("DEVICE", "cheetah");
         sP7Props.put("PRODUCT", "cheetah");
         sP7Props.put("MODEL", "Pixel 7 Pro");
-        sP7Props.put("FINGERPRINT", "google/cheetah/cheetah:13/TQ2A.230305.008.C1/9619669:user/release-keys");
+        sP7Props.put("FINGERPRINT", "google/cheetah/cheetah:13/TQ3A.230805.001/10316531:user/release-keys");
     }
 
      private static final Map<String, Object> sPXLProps = new HashMap<>();
