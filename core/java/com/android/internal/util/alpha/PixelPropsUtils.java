@@ -60,6 +60,9 @@ public class PixelPropsUtils {
 
     // Packages to Spoof as Pixel 7 Pro
     private static final String[] packagesToChangePixel7Pro = {
+            "com.google.android.apps.googleassistant",
+            "com.google.android.googlequicksearchbox",
+            "com.google.android.inputmethod.latin"
             "com.amazon.avod.thirdpartyclient",
             "com.android.chrome",
             "com.breel.wallpapers20",
