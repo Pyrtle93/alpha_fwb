@@ -27,7 +27,7 @@
         android:textAppearance="@style/TextAppearance.QS.SecurityFooter"
         android:layout_gravity="center"
         android:textColor="?android:attr/textColorPrimary"
-        android:textSize="18sp"/>
+        android:textSize="10sp"/>
     <ImageView
         android:id="@+id/new_dot"
         android:layout_width="12dp"
